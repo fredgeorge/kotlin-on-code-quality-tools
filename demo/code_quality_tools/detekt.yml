@@ -1,7 +1,0 @@
-failFast: true
-
-comments:
-  UndocumentedPublicFunction:
-    active: false
-  UndocumentedPublicClass:
-    active: false
