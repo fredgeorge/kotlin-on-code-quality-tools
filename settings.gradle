@@ -1,4 +1,2 @@
 include ':demo'
-include ':custom-ktlint-rules'
 include ':custom-detekt-rules'
-include ':custom-android-lint-rules'

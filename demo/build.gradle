@@ -10,21 +10,6 @@ dependencies {
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 }
 
-// Lint.
-
-apply plugin: "com.android.lint"
-
-lintOptions {
-  abortOnError true
-  warningsAsErrors true
-  // baseline project.file("baseline-lint.xml")
-}
-
-dependencies {
-  // Unfortunately this does not quite work for Kotlin projects - https://issuetracker.google.com/issues/112526243
-  lintChecks project(":custom-android-lint-rules")
-}
-
 // Detekt.
 
 configurations {
@@ -61,11 +46,6 @@ task detekt(type: JavaExec, group: "verification", description: "Runs detekt.") 
 
 configurations {
   ktlint
-}
-
-dependencies {
-  ktlint "com.github.shyiko:ktlint:$ktlintVersion"
-  ktlint project(":custom-ktlint-rules")
 }
 
 def outputDir = "${project.buildDir}/reports/ktlint/"
